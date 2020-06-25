@@ -1,3 +1,4 @@
+"use strict"
 const colors = [
   '#FFFFFF',
   '#2196F3',
@@ -21,10 +22,7 @@ let switchID = null;
 
 const startSwitch = function () {
   switchID = setInterval(() => {
-      i = randomIntegerFromInterval(0, colors.length-1);
-      console.log(i);
-      console.log(colors[i]);
-      res.target.style.backgroundColor = colors[i];
+      res.target.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length-1)];
     },
     1000);
   res.start.removeEventListener("click", startSwitch);
